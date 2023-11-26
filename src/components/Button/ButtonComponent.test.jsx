@@ -13,12 +13,8 @@ test('renders the button and responds to click events', () => {
             style={{}}
         />
     )
-
-    // Comprueba que el botón se renderiza con el texto correcto
     const button = screen.getByText(buttonText)
     expect(button).toBeInTheDocument()
 
-    // Comprueba que el botón responde a los eventos de clic
     userEvent.click(button)
-    // Aquí puedes comprobar los efectos del clic, por ejemplo, si se llama a una función de prop onClick
 })
