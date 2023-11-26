@@ -13,24 +13,26 @@ import {
     MainContainer,
     SearchContainer,
     SortOrderContainer,
+    getMediaCardStyle,
 } from './styles'
 
 const Home: FC = () => {
     const {
         fetchProducts,
-        width,
-        widthSearch,
+        filteredProducts,
         height,
         heightPicture,
+        productIdsToShowMoreColors,
         searchValue,
         setSearchValue,
         setSortOrder,
-        filteredProducts,
+        width,
+        widthSearch,
     } = useLogicHome()
 
     useEffect(() => {
         fetchProducts()
-    }, [fetchProducts, searchValue, setSearchValue])
+    }, [fetchProducts])
 
     return (
         <MainContainer>
@@ -57,31 +59,17 @@ const Home: FC = () => {
                     </Typography>
                 )}
                 {filteredProducts.map((product, index) => {
-                    const showMoreColorsText =
-                        product.id === 1 ||
-                        product.id === 2 ||
-                        product.id === 3 ||
-                        product.id === 5 ||
-                        product.id === 8
-
                     return (
                         <MediaCard
                             key={index}
                             heightPicture={heightPicture as number}
-                            style={{
-                                width: width,
-                                margin: '0.6rem',
-                                display: 'flex',
-                                flexDirection: 'column',
-                                height: height,
-                                padding: '0.8rem',
-                                border: '1px solid #2843613c',
-                                boxShadow: '0px 0px 5px 0px #0172ea3c',
-                            }}
+                            style={getMediaCardStyle({ width, height })}
                             title={product.title}
                             image={product.image}
                             product={product}
-                            showMoreColorsText={showMoreColorsText}
+                            showMoreColorsText={productIdsToShowMoreColors.includes(
+                                product.id
+                            )}
                         />
                     )
                 })}

@@ -105,21 +105,6 @@ const MediaCard: FC<MediaCardProps> = ({
                     </Typography>
                 )}
             </Box>
-            {/* <Box>
-                {showMoreColorsText && (
-                    <Typography
-                        sx={{
-                            display: 'flex',
-                            justifyContent: 'center',
-                            fontSize: '0.6rem',
-                        }}
-                        variant="body2"
-                        color="text.secondary"
-                    >
-                        Más colores
-                    </Typography>
-                )}
-            </Box> */}
             <CardActions
                 sx={{
                     display: 'flex',

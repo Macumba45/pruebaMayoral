@@ -4,9 +4,9 @@
     "private": true,
     "scripts": {
         "dev": "next dev",
-        "precommit": "prettier --write . && yarn lint --fix",
+        "precommit": "prettier --write . && yarn lint --fix && yarn test",
         "local": "next build",
-        "build": "prisma generate & next build",
+        "build": "next build",
         "start": "next start",
         "lint": "next lint",
         "prettier": "prettier --write .",

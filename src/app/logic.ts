@@ -4,6 +4,7 @@ import { ProductsWithDiscount } from '@/components/CardProduct'
 
 export const useLogicHome = () => {
     const [products, setProducts] = useState<Products[]>([])
+    const productIdsToShowMoreColors = [1, 2, 3, 5, 8, 9, 10, 11]
     const [width, setWidth] = useState<number | undefined>(undefined)
     const [height, setHeight] = useState<number | undefined>(undefined)
     const [heightPicture, setHeightPicture] = useState<number | undefined>(
@@ -35,20 +36,14 @@ export const useLogicHome = () => {
         try {
             const response = await fetch('https://fakestoreapi.com/products')
             const data = await response.json()
-            // Aplicar descuento a productos específicos
+            // Aplicar descuento a productos aleatroios cada vez que se recargue la página
             const productsWithDiscount = data.map(
                 (product: ProductsWithDiscount) => {
-                    if (
-                        product.id === 1 ||
-                        product.id === 2 ||
-                        product.id === 3 ||
-                        product.id === 5 ||
-                        product.id === 8 ||
-                        product.id === 10 ||
-                        product.id === 20 ||
-                        product.id === 18
-                    ) {
-                        // Aplicar descuento del 30%
+                    // Generar un número aleatorio entre 0 y 1
+                    const random = Math.random()
+
+                    // Si el número aleatorio es menor que 0.5, aplicar el descuento
+                    if (random < 0.5) {
                         return {
                             ...product,
                             priceDiscount: product.price - product.price * 0.3,
@@ -88,15 +83,16 @@ export const useLogicHome = () => {
 
     return {
         fetchProducts,
-        products,
-        width,
-        widthSearch,
+        filteredProducts,
         height,
         heightPicture,
+        productIdsToShowMoreColors,
+        products,
         searchValue,
         setSearchValue,
-        sortOrder,
         setSortOrder,
-        filteredProducts,
+        sortOrder,
+        width,
+        widthSearch,
     }
 }

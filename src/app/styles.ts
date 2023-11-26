@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { StylePropsMediaCard } from './types'
 
 export const MainContainer = styled.div``
 
@@ -38,3 +39,17 @@ export const SortOrderContainer = styled.div`
         margin-left: 1rem;
     }
 `
+
+export const getMediaCardStyle = ({
+    width,
+    height,
+}: StylePropsMediaCard): React.CSSProperties => ({
+    width: width,
+    margin: '0.6rem',
+    display: 'flex',
+    flexDirection: 'column',
+    height: height,
+    padding: '0.8rem',
+    border: '1px solid #2843613c',
+    boxShadow: '0px 0px 5px 0px #0172ea3c',
+})

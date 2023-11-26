@@ -1,4 +1,4 @@
-export interface Products {
+export type Products = {
     id: number
     title: string
     price: number
@@ -8,7 +8,12 @@ export interface Products {
     rating: Rating
 }
 
-export interface Rating {
+export type Rating = {
     rate: number
     count: number
+}
+
+export type StylePropsMediaCard = {
+    width: number | undefined
+    height: number | undefined
 }
