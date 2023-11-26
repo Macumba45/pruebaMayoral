@@ -63,7 +63,7 @@ const MediaCard: FC<MediaCardProps> = ({
                     justifyContent: 'center',
                     alignItems: 'center',
                     flexDirection: 'column',
-                    height: '200px',
+                    height: '100%',
                 }}
             >
                 <Typography
@@ -90,8 +90,22 @@ const MediaCard: FC<MediaCardProps> = ({
                 >
                     {priceDiscount && `${priceDiscount.toFixed(2)}€ (-20%)`}
                 </Typography>
+                {showMoreColorsText && (
+                    <Typography
+                        sx={{
+                            display: 'flex',
+                            justifyContent: 'center',
+                            fontSize: '0.6rem',
+                            mt: 2,
+                        }}
+                        variant="body2"
+                        color="text.secondary"
+                    >
+                        Más colores
+                    </Typography>
+                )}
             </Box>
-            <Box>
+            {/* <Box>
                 {showMoreColorsText && (
                     <Typography
                         sx={{
@@ -105,7 +119,7 @@ const MediaCard: FC<MediaCardProps> = ({
                         Más colores
                     </Typography>
                 )}
-            </Box>
+            </Box> */}
             <CardActions
                 sx={{
                     display: 'flex',
