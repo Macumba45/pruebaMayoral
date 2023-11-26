@@ -8,19 +8,19 @@ Este proyecto consiste en maquetar las imágenes proporcionadas, teniendo en cue
 
 ## Tecnologías/Librerías Utilizadas
 
-- React
-- Typescript
-- [Next.js](https://nextjs.org/)
+-   React
+-   Typescript
+-   [Next.js](https://nextjs.org/)
 
 ## Funcionalidades Implementadas
 
-- División de la aplicación en componentes de manera organizada.
-- Vista que se asemeja lo más posible a las fotos proporcionadas.
-- Búsqueda de productos por nombre.
-- Consumo de un JSON con los datos de los productos, ya sea local o externo.
-- Cambio dinámico de la vista con iconos específicos: de 4 a 3 elementos en escritorio, de 3 a 2 elementos en móvil.
-- Implementación de un componente "ordenar" que permite ordenar los productos por precio de forma ascendente y descendente.
-- Creación de tests unitarios para las funcionalidades relevantes.
+-   División de la aplicación en componentes de manera organizada.
+-   Vista que se asemeja lo más posible a las fotos proporcionadas.
+-   Búsqueda de productos por nombre.
+-   Consumo de un JSON con los datos de los productos, ya sea local o externo.
+-   Cambio dinámico de la vista con iconos específicos: de 4 a 3 elementos en escritorio, de 3 a 2 elementos en móvil.
+-   Implementación de un componente "ordenar" que permite ordenar los productos por precio de forma ascendente y descendente.
+-   Creación de tests unitarios para las funcionalidades relevantes.
 
 ## Cómo Ejecutar el Proyecto
 

@@ -17,49 +17,54 @@ export const useLogicHome = () => {
     const [sortOrder, setSortOrder] = useState<'asc' | 'desc'>('asc')
 
     const filteredProducts = products
-        .filter((product) =>
+        .filter(product =>
             product.title.toLowerCase().includes(searchValue.toLowerCase())
         )
         .sort((a, b) => {
             const getPrice = (product: ProductsWithDiscount) =>
-                product.priceDiscount !== undefined ? product.priceDiscount : product.price;
+                product.priceDiscount !== undefined
+                    ? product.priceDiscount
+                    : product.price
 
-            return sortOrder === 'asc' ? getPrice(a) - getPrice(b) : getPrice(b) - getPrice(a);
-        });
+            return sortOrder === 'asc'
+                ? getPrice(a) - getPrice(b)
+                : getPrice(b) - getPrice(a)
+        })
 
     const fetchProducts = useCallback(async (): Promise<void> => {
         try {
-            const response = await fetch('https://fakestoreapi.com/products');
-            const data = await response.json();
+            const response = await fetch('https://fakestoreapi.com/products')
+            const data = await response.json()
             console.log(data)
             // Aplicar descuento a productos específicos
-            const productsWithDiscount = data.map((product: ProductsWithDiscount) => {
-                if (
-                    product.id === 1 ||
-                    product.id === 2 ||
-                    product.id === 3 ||
-                    product.id === 5 ||
-                    product.id === 8 ||
-                    product.id === 10 ||
-                    product.id === 20 ||
-                    product.id === 18
-                ) {
-                    // Aplicar descuento del 30%
-                    return {
-                        ...product,
-                        priceDiscount: product.price - product.price * 0.3,
-                    };
-                } else {
-                    return product;
+            const productsWithDiscount = data.map(
+                (product: ProductsWithDiscount) => {
+                    if (
+                        product.id === 1 ||
+                        product.id === 2 ||
+                        product.id === 3 ||
+                        product.id === 5 ||
+                        product.id === 8 ||
+                        product.id === 10 ||
+                        product.id === 20 ||
+                        product.id === 18
+                    ) {
+                        // Aplicar descuento del 30%
+                        return {
+                            ...product,
+                            priceDiscount: product.price - product.price * 0.3,
+                        }
+                    } else {
+                        return product
+                    }
                 }
-            });
+            )
 
-            setProducts(productsWithDiscount);
+            setProducts(productsWithDiscount)
         } catch (error) {
-            console.log(error);
+            console.log(error)
         }
-    }, []);
-
+    }, [])
 
     useEffect(() => {
         const handleResize = () => {
@@ -94,6 +99,5 @@ export const useLogicHome = () => {
         sortOrder,
         setSortOrder,
         filteredProducts,
-        
     }
 }
