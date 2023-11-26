@@ -28,7 +28,6 @@ Este proyecto consiste en maquetar las imágenes proporcionadas, teniendo en cue
 2. Instala las dependencias con `yarn install`.
 3. Ejecuta el proyecto con `yarn dev`.
 4. Abre [http://localhost:3000](http://localhost:3000) en tu navegador para ver el resultado.
-5. Puedes empezar a editar la página modificando `app/page.tsx`. La página se actualizará automáticamente a medida que edites el archivo.
 
 Este proyecto utiliza [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) para optimizar y cargar automáticamente la fuente Inter de Google.
 
