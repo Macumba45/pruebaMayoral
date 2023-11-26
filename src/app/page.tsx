@@ -58,21 +58,17 @@ const Home: FC = () => {
                         No hay productos
                     </Typography>
                 )}
-                {filteredProducts.map((product, index) => {
-                    return (
-                        <MediaCard
-                            key={index}
-                            heightPicture={heightPicture as number}
-                            style={getMediaCardStyle({ width, height })}
-                            title={product.title}
-                            image={product.image}
-                            product={product}
-                            showMoreColorsText={productIdsToShowMoreColors.includes(
-                                product.id
-                            )}
-                        />
-                    )
-                })}
+                {filteredProducts.map((product, index) => (
+                    <MediaCard
+                        key={index}
+                        heightPicture={heightPicture as number}
+                        style={getMediaCardStyle({ width, height })}
+                        title={product.title}
+                        image={product.image}
+                        productPrice={product}
+                        showMoreColorsText={productIdsToShowMoreColors.includes(product.id)}
+                    />
+                ))}
             </CardContainer>
         </MainContainer>
     )

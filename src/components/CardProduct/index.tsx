@@ -14,7 +14,7 @@ export interface ProductsWithDiscount extends Products {
 interface MediaCardProps {
     image: string
     title: string
-    product: ProductsWithDiscount
+    productPrice: ProductsWithDiscount
     style?: React.CSSProperties
     heightPicture: number
     showMoreColorsText: boolean
@@ -24,11 +24,11 @@ const MediaCard: FC<MediaCardProps> = ({
     image,
     title,
     style,
-    product,
+    productPrice,
     heightPicture,
     showMoreColorsText,
 }) => {
-    const { price, priceDiscount } = product
+    const { price, priceDiscount } = productPrice
 
     return (
         <Card sx={style}>
