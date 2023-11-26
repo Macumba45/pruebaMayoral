@@ -1,4 +1,4 @@
-# Nombre del Proyecto
+# Prueba MAYORAL - Frontend
 
 Este proyecto utiliza [Next.js](https://nextjs.org/), React y Typescript para crear una aplicación que muestra productos y permite buscarlos y ordenarlos.
 
