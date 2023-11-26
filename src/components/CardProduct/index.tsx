@@ -39,7 +39,7 @@ const MediaCard: FC<MediaCardProps> = ({
                     component="img"
                     sx={{
                         height: heightPicture,
-                        objectFit: 'cover',
+                        objectFit: 'contain',
                     }}
                 />
             </div>
